@@ -1,0 +1,61 @@
+{
+  "companyName": "Abundant Engineering",
+  "tagline": "Façonner l'avenir vertical de l'Éthiopie",
+  "welcomeTitle": "Bienvenue chez Abundant Engineering",
+  "welcomeText": "Bienvenue chez Abundant Engineering, un acteur majeur de l'industrie des ascenseurs, dédié à fournir des solutions de transport vertical innovantes et fiables. Avec un engagement envers la qualité et l'excellence, nous sommes spécialisés dans la conception, l'installation et la maintenance d'ascenseurs garantissant sécurité, efficacité et confort. Notre équipe de professionnels expérimentés associe expertise industrielle et technologie de pointe pour offrir une gamme complète de services, notamment l'installation, la modernisation, la maintenance et la réparation d'ascenseurs. Chez Abundant Engineering, nous sommes fiers de comprendre les besoins uniques de nos clients et de proposer des solutions personnalisées qui améliorent la fonctionnalité des bâtiments et l'expérience des utilisateurs. Fondée sur les principes d'intégrité, d'innovation et de performance, Abundant Engineering est votre partenaire de confiance pour naviguer dans le paysage en constante évolution de la mobilité verticale. Rejoignez-nous pour transformer le potentiel de votre bâtiment avec des solutions d'ascenseurs sûres, efficaces et à la pointe de la technologie qui ont un impact durable.",
+
+  "requestQuote": "Demander un devis",
+  "contactBtn": "Contact",
+  "language": "Langue",
+  "languageEN": "Anglais",
+  "languageFR": "Français",
+  "languageDE": "Allemand",
+  "darkMode": "Mode sombre",
+  "signIn": "Se connecter",
+  "home": "Accueil",
+  "about": "À propos",
+  "projects": "Projets",
+  "faq": "FAQ",
+
+  "sections": {
+    "about": {
+      "title": "À propos de nous",
+      "subtitle": "Notre vision, mission et valeurs"
+    },
+
+    "services": {
+      "title": "Nos Services",
+      "description": "Solutions complètes pour ascenseurs, de l’installation à la maintenance",
+      "items": [
+        {
+          "key": "installation",
+          "title": "Installation d’ascenseurs",
+          "text": "Services d’installation professionnels garantissant sécurité et efficacité."
+        },
+        {
+          "key": "modernization",
+          "title": "Modernisation d’ascenseurs",
+          "text": "Mise à niveau des systèmes existants avec les dernières technologies."
+        },
+        {
+          "key": "maintenance",
+          "title": "Maintenance d’ascenseurs",
+          "text": "Entretien régulier pour assurer des performances et une sécurité optimales."
+        },
+        {
+          "key": "repair",
+          "title": "Services de réparation",
+          "text": "Services de réparation rapides et fiables pour minimiser les temps d’arrêt."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Nous contacter",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "formTitle": "Envoyez-nous un message",
+      "button": "Envoyer"
+    }
+  }
+}

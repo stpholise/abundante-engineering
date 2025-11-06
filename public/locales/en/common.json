@@ -1,0 +1,70 @@
+{
+  "companyName": "Abundant Engineering",
+  "tagline": "Engineering Ethiopia's Vertical Future",
+  "welcomeTitle": "Welcome to Abundant Engineering",
+  "welcomeText": "Welcome to Abundant Engineering, a leading force in the elevator industry dedicated to delivering innovative and reliable vertical transportation solutions. With a commitment to quality and excellence, we specialize in designing, installing, and maintaining elevators that ensure safety, efficiency, and comfort. Our team of experienced professionals combines industry expertise with cutting-edge technology to offer a full range of services, including elevator installation, modernization, maintenance, and repair. At Abundant Engineering, we pride ourselves on understanding our clients' unique needs and providing customized solutions that enhance building functionality and elevate user experience. Founded on the principles of integrity, innovation, and performance, Abundant Engineering is your trusted partner in navigating the evolving landscape of vertical mobility. Join us in transforming your building's potential with safe, efficient, and state-of-the-art elevator solutions that make a lasting impact.",
+
+  "requestQuote": "Request a Quote",
+  "contactBtn": "Contact",
+  "language": "Language",
+  "languageEN": "English",
+  "languageFR": "French",
+  "languageDE": "German",
+  "darkMode": "Dark Mode",
+  "signIn": "Sign In",
+  "home": "Home",
+  "about": "About",
+  "projects": "Projects",
+  "faq": "FAQ",
+
+  "sections": {
+    "about": {
+      "title": "About Us",
+      "subtitle": "Our Vision, Mission, and Values"
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "Comprehensive elevator solutions from installation to maintenance",
+      "items": [
+        {
+          "key": "installation",
+          "title": "Installation",
+          "text": "Professional installation services ensuring safety and efficiency."
+        },
+         {
+          "key": "maintenance",
+          "title": "Maintenance & Repair",
+          "text": "Regular maintenance to ensure optimal performance and safety."
+        },
+        {
+          "key": "modernization",
+          "title": "Modernization",
+          "text": "Upgrading existing systems with the latest technology."
+        },
+        {
+          "key": "escalator_moving_walkways",
+          "title": "Escalator & Moving Walkways",
+          "text": "Complete escalator and moving walkway solutions for high-traffic areas."
+        },
+        {
+          "key": "spare_parts",
+          "title": "Spare Parts",
+          "text": "Genuine spare parts for all elevator and escalator models."
+        },
+        {
+          "key": "consultation_project_mgmt",
+          "title": "Consultation & Project Management",
+          "text": "Expert consultation and project management services for all elevator and escalator projects."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "formTitle": "Send us a Message",
+      "button": "Submit"
+    }
+  }
+}

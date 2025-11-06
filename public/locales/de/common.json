@@ -1,0 +1,61 @@
+{
+  "companyName": "Abundant Engineering",
+  "tagline": "Gestaltung von Äthiopiens vertikaler Zukunft",
+  "welcomeTitle": "Willkommen bei Abundant Engineering",
+  "welcomeText": "Willkommen bei Abundant Engineering, einem führenden Unternehmen in der Aufzugsbranche, das sich der Bereitstellung innovativer und zuverlässiger vertikaler Transportsysteme verschrieben hat. Mit einem Engagement für Qualität und Exzellenz sind wir auf die Planung, Installation und Wartung von Aufzügen spezialisiert, die Sicherheit, Effizienz und Komfort gewährleisten. Unser Team aus erfahrenen Fachleuten kombiniert Branchenkenntnisse mit modernster Technologie, um ein umfassendes Angebot an Dienstleistungen anzubieten, darunter Aufzugsinstallation, Modernisierung, Wartung und Reparatur. Bei Abundant Engineering sind wir stolz darauf, die individuellen Bedürfnisse unserer Kunden zu verstehen und maßgeschneiderte Lösungen anzubieten, die die Funktionalität von Gebäuden verbessern und die Benutzererfahrung steigern. Gegründet auf den Prinzipien von Integrität, Innovation und Leistung ist Abundant Engineering Ihr vertrauenswürdiger Partner bei der Navigation durch die sich ständig weiterentwickelnde Landschaft der vertikalen Mobilität. Schließen Sie sich uns an, um das Potenzial Ihres Gebäudes mit sicheren, effizienten und modernen Aufzugslösungen zu transformieren, die einen bleibenden Eindruck hinterlassen.",
+
+  "requestQuote": "Angebot anfordern",
+  "contactBtn": "Kontakt",
+  "language": "Sprache",
+  "languageEN": "Englisch",
+  "languageFR": "Französisch",
+  "languageDE": "Deutsch",
+  "darkMode": "Dunkelmodus",
+  "signIn": "Anmelden",
+  "home": "Startseite",
+  "about": "Über uns",
+  "projects": "Projekte",
+  "faq": "FAQ",
+
+  "sections": {
+    "about": {
+      "title": "Über uns",
+      "subtitle": "Unsere Vision, Mission und Werte"
+    },
+
+    "services": {
+      "title": "Unsere Dienstleistungen",
+      "description": "Umfassende Aufzugslösungen von der Installation bis zur Wartung",
+      "items": [
+        {
+          "key": "installation",
+          "title": "Aufzuginstallation",
+          "text": "Professionelle Installationsdienste, die Sicherheit und Effizienz gewährleisten."
+        },
+        {
+          "key": "modernization",
+          "title": "Modernisierung von Aufzügen",
+          "text": "Modernisierung bestehender Systeme mit der neuesten Technologie."
+        },
+        {
+          "key": "maintenance",
+          "title": "Aufzugswartung",
+          "text": "Regelmäßige Wartung, um optimale Leistung und Sicherheit zu gewährleisten."
+        },
+        {
+          "key": "repair",
+          "title": "Reparaturdienste",
+          "text": "Schnelle und zuverlässige Reparaturdienste zur Minimierung von Ausfallzeiten."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Kontakt aufnehmen",
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "formTitle": "Senden Sie uns eine Nachricht",
+      "button": "Senden"
+    }
+  }
+}
