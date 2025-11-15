@@ -9,6 +9,7 @@ export const authorType = defineType({
   fields: [
     defineField({
       name: 'name',
+      title: "Full name",
       type: 'string',
     }),
     defineField({

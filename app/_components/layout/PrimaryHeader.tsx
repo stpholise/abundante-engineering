@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { useState, useEffect } from "react";
 import SecondaryHeader from "./SecondaryHeader";
 import { useTranslation } from "../../i18n/client";
+import Link from "next/link";
 
 const PrimaryHeader = () => {
   const [darkmode, setDarkmode] = useState<boolean>(false);
@@ -34,9 +35,9 @@ const PrimaryHeader = () => {
               height={40}
               className=" size-8"
             />
-            <span className="text-xs text-black dark:text-white">
-              {t("companyName")}
-            </span>
+            <Link href={"/"} className="text-xs text-black dark:text-white">
+              {t("companyName")}  
+            </Link>
           </div>
 
           <div className="flex items-ceter gap-4">
@@ -54,7 +55,11 @@ const PrimaryHeader = () => {
                   )
                 }
               >
-                {i18n.language === "en" ? "DE" : i18n.language === "de" ? "FR" : "EN"}
+                {i18n.language === "en"
+                  ? "DE"
+                  : i18n.language === "de"
+                    ? "FR"
+                    : "EN"}
               </button>
             </div>
             <div className="flex items-center gap-1.5">

@@ -28,31 +28,37 @@
       "items": [
         {
           "key": "installation",
+          "icon": "/icons/building-red.svg",
           "title": "Installation",
           "text": "Professional installation services ensuring safety and efficiency."
         },
          {
           "key": "maintenance",
+          "icon": "/icons/wrench-red.svg",
           "title": "Maintenance & Repair",
           "text": "Regular maintenance to ensure optimal performance and safety."
         },
         {
           "key": "modernization",
+          "icon": "/icons/setting-red.svg",
           "title": "Modernization",
           "text": "Upgrading existing systems with the latest technology."
         },
         {
           "key": "escalator_moving_walkways",
+          "icon": "/icons/arrow-up-red.svg",
           "title": "Escalator & Moving Walkways",
           "text": "Complete escalator and moving walkway solutions for high-traffic areas."
         },
         {
           "key": "spare_parts",
+          "icon": "/icons/hammer-red.svg",
           "title": "Spare Parts",
           "text": "Genuine spare parts for all elevator and escalator models."
         },
         {
           "key": "consultation_project_mgmt",
+          "icon": "/icons/message-red.svg",
           "title": "Consultation & Project Management",
           "text": "Expert consultation and project management services for all elevator and escalator projects."
         }
