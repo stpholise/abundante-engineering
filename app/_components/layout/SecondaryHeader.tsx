@@ -15,7 +15,7 @@ const SecondaryHeader = () => {
                 <li key={link.name} className="">
                   <Link
                     href={link.href}
-                    className=" px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-xs"
+                    className=" px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-xs capitalize"
                   >
                     {t(link.name.toLowerCase())}
                   </Link>
@@ -46,6 +46,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
+  { name: "News", href: "/news" },
   { name: "Contact", href: "/contact" },
   { name: "FAQ", href: "/faq" },
 ];

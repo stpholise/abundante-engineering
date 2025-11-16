@@ -30,22 +30,38 @@
         {
           "key": "installation",
           "title": "Installation d’ascenseurs",
+          "icon": "/icons/building-red.svg",
           "text": "Services d’installation professionnels garantissant sécurité et efficacité."
         },
         {
           "key": "modernization",
+           "icon": "/icons/wrench-red.svg",
           "title": "Modernisation d’ascenseurs",
           "text": "Mise à niveau des systèmes existants avec les dernières technologies."
         },
         {
           "key": "maintenance",
           "title": "Maintenance d’ascenseurs",
+          "icon": "/icons/setting-red.svg",
           "text": "Entretien régulier pour assurer des performances et une sécurité optimales."
         },
         {
           "key": "repair",
           "title": "Services de réparation",
+           "icon": "/icons/arrow-up-red.svg",
           "text": "Services de réparation rapides et fiables pour minimiser les temps d’arrêt."
+        },
+           {
+          "key": "spare_parts",
+          "icon": "/icons/hammer-red.svg",
+          "title": "Spare Parts",
+          "text": "Genuine spare parts for all elevator and escalator models."
+        },
+        {
+          "key": "consultation_project_mgmt",
+          "icon": "/icons/message-red.svg",
+          "title": "Consultation & Project Management",
+          "text": "Expert consultation and project management services for all elevator and escalator projects."
         }
       ]
     },

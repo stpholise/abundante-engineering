@@ -29,23 +29,40 @@
       "items": [
         {
           "key": "installation",
+          "icon": "/icons/building-red.svg",
           "title": "Aufzuginstallation",
           "text": "Professionelle Installationsdienste, die Sicherheit und Effizienz gewährleisten."
         },
         {
           "key": "modernization",
+          "icon": "/icons/wrench-red.svg",
           "title": "Modernisierung von Aufzügen",
+
           "text": "Modernisierung bestehender Systeme mit der neuesten Technologie."
         },
         {
           "key": "maintenance",
           "title": "Aufzugswartung",
+          "icon": "/icons/setting-red.svg",
           "text": "Regelmäßige Wartung, um optimale Leistung und Sicherheit zu gewährleisten."
         },
         {
           "key": "repair",
           "title": "Reparaturdienste",
+          "icon": "/icons/arrow-up-red.svg",
           "text": "Schnelle und zuverlässige Reparaturdienste zur Minimierung von Ausfallzeiten."
+        },
+        {
+          "key": "spare_parts",
+          "icon": "/icons/hammer-red.svg",
+          "title": "Spare Parts",
+          "text": "Genuine spare parts for all elevator and escalator models."
+        },
+        {
+          "key": "consultation_project_mgmt",
+          "icon": "/icons/message-red.svg",
+          "title": "Consultation & Project Management",
+          "text": "Expert consultation and project management services for all elevator and escalator projects."
         }
       ]
     },

@@ -1,5 +1,5 @@
 "use client";
- 
+
 import { useTranslation } from "../i18n/client";
 
 const Page = () => {

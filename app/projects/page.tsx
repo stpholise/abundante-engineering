@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Select from "react-select";
-import ProjectCard from "./components/ProjectCard";
+import ProjectCard from "./_components/ProjectCard";
 import Image from "next/image";
 
 type OptionType = {
