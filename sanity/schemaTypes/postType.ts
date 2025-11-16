@@ -55,6 +55,7 @@ export const postType = defineType({
       name: "categories",
       type: "array",
       of: [defineArrayMember({ type: "reference", to: { type: "category" } })],
+      validation: Rule => Rule.required().error("Required")
     }),
     defineField({
       name: "publishedAt",
@@ -62,7 +63,7 @@ export const postType = defineType({
       initialValue: () => new Date().toISOString(),
     }),
     defineField({
-      name: "tag",
+      name: "tags",
       type: "array",
       of: [{ type: "string" }],
       options: {

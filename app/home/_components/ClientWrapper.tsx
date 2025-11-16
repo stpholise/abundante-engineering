@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 import ServiceCard from "../../_components/cards/ServiceCard";
 import { useTranslation } from "../../i18n/client";
-import LatestNewsCard from "../../_components/cards/LatestNewsCard";
+// import LatestNewsCard from "../../_components/cards/LatestNewsCard";
 import Image from "next/image";
 
 type Service = { key: string; title: string; text: string; icon: string };
@@ -15,6 +15,8 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
   const childrenArray = Array.isArray(children) ? children : [children];
 
   const FeaturedProjects = childrenArray[0]; 
+  const LatestNews = childrenArray[1]; 
+   
 
   return (
     <div className="bg-white dark:bg-[#0a0a0a]   min-h-screen w-full">
@@ -101,8 +103,9 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
               Industry insights and company updates
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-7 py-6">
-            {[...Array(3)].map((_, index) => (
+          <div className="">
+            {LatestNews}
+            {/* {[...Array(3)].map((_, index) => (
               <div className="" key={index}>
                 <LatestNewsCard
                   category={`Category ${index + 1}`}
@@ -111,7 +114,7 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
                   date={`${new Date().toLocaleDateString()}`}
                 />
               </div>
-            ))}
+            ))} */}
           </div>
           <div className="">
             <button className="mx-auto  border border-[#e6e6e6] dark:border-[#262626] dark:bg-[#1c1c1c] dark:text-white  text-[#121212] hover:bg-[#eaeaea] px-4 py-2 rounded-lg text-xs flex items-center gap-2 h-8">
