@@ -56,19 +56,11 @@ const page = async ({ params }: { params: { slug: string } }) => {
   );
 
   if (!res.ok) {
-    console.log("Error fetching data for slug:", res.statusText);
     throw new Error("Failed to fetch data");
   }
   const rawData = await res.json();
   const { _createdAt, title, body, categories, author, mainImage, tags } =
     (await rawData.result[0]) as NewsItem;
-
-  console.log("Fetched data for slug:", {
-    title,
-    _createdAt,
-    categories,
-    author,
-  });
 
   if (!rawData.result[0]) {
     return notFound();
@@ -137,20 +129,22 @@ const page = async ({ params }: { params: { slug: string } }) => {
             <div className="mb-4">
               <PortableTextComponent value={body} />
             </div>
-            <div className="pt-4 border-t border-gray-300">
-              <h3 className="text-sm font-semibold mb-2 text-[#262626] dark:text-[#fafafa]">
-                Tags
-              </h3>
-              {tags &&
-                tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-block bg-[#f5f5f5] text-gray-800 text-xs px-2 py-1 rounded mr-2"
-                  >
-                    {tag}
-                  </span>
-                ))}
-            </div>
+            {tags && (
+              <div className="pt-4 border-t border-gray-300">
+                <h3 className="text-sm font-semibold mb-2 text-[#262626] dark:text-[#fafafa]">
+                  Tags
+                </h3>
+                {tags &&
+                  tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block bg-[#f5f5f5] text-gray-800 text-xs px-2 py-1 rounded mr-2"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+              </div>
+            )}
           </div>
           <aside className="">
             <div className="p-4 flex flex-col gap-3 border  border-gray-200 rounded-lg">
