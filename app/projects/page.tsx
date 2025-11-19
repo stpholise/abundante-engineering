@@ -26,8 +26,8 @@ const Page = () => {
     <div className="bg-white dark:bg-[#121212] min-h-screen text-black dark:text-white   ">
       <main className="container mx-auto px-4 lg:px-16 py-10">
         <div className="container mx-auto px-4  py-10 flex flex-col items-center gap-6">
-          <h1 className="text-red-500 text-3xl font-bold">Our Projects </h1>
-          <p className="max-w-2xl text-center text-[#717182]">
+          <h1 className="text-red-500 text-3xl font-bold text-center">Our Projects </h1>
+          <p className="max-w-2xl text-center text-[#717182] mx-auto">
             Successful elevator installations and maintenance projects across
             Ethiopia. From residential buildings to major commercial complexes.
           </p>
@@ -150,7 +150,7 @@ const Page = () => {
           </section>
           <section className="projects">
             <div className="">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                  {
                     [...Array(9)].map((_,index) => (<ProjectCard key={index} />))
                  }

@@ -13,6 +13,14 @@ type Data = {
   location: string;
   projectCategory: string;
   slug: Slug;
+  gallery: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+    alt: string;
+    caption: string;
+  }[];
 };
 
 export default async function FetchProjects() {
@@ -26,7 +34,16 @@ export default async function FetchProjects() {
   completed,
   name,
   location,
-  projectCategory
+  projectCategory,
+ gallery[]{
+    asset->{
+      _id,  
+      url
+    },
+    alt,
+    caption
+  },
+
     }`;
 
   const res = await fetch(url, {
@@ -37,10 +54,10 @@ export default async function FetchProjects() {
   if (!data) {
     return <div>No data found</div>;
   }
- 
+
   return (
     <div className="text-black">
-      <div className="grid lg:grid-cols-3 gap-7 py-6">
+      <div className="  grid sm:grid-cols-2 grid-cols-1 justify-center  md:grid-cols-3 gap-7  py-6 ">
         {data &&
           data.map((project: Data) => (
             <FeaturedProjectCard
@@ -50,6 +67,7 @@ export default async function FetchProjects() {
               category={project.projectCategory}
               slug={project.slug}
               key={project._id}
+              image={project.gallery[0]}
             />
           ))}
       </div>

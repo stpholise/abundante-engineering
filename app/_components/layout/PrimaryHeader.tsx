@@ -26,7 +26,7 @@ const PrimaryHeader = () => {
   return (
     <header className="sticky top-0 left-0 right-0 z-50">
       <div className="  bg-[#fafafa] dark:bg-[#121212] text-black dark:text-white">
-        <div className="container mx-auto  flex justify-between items-center py-2 px-4 lg:px-16">
+        <div className="md:container mx-auto  flex justify-between items-center py-2 px-4 lg:px-16 md:px-8 sm:px-4 ">
           <div className="flex   gap-2 items-center justify-items-start">
             <Image
               src="/logo.svg"
@@ -41,7 +41,7 @@ const PrimaryHeader = () => {
           </div>
 
           <div className="flex items-ceter gap-4">
-            <div className="flex gap-1 items-center  justify-center">
+            <div className="xs:flex gap-1 items-center  justify-center hidden ">
               <Image src={"/globe.svg"} alt="language" width="12" height="12" />
               <button
                 className="text-xs cursor-pointer"
@@ -62,7 +62,7 @@ const PrimaryHeader = () => {
                     : "EN"}
               </button>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className=" hidden xs:flex items-center gap-1.5 ">
               <Image
                 src={darkmode ? "/moon-light.svg" : "/sun.svg"}
                 alt="dark mode "
@@ -85,17 +85,17 @@ const PrimaryHeader = () => {
             </div>
             <div className="flex gap-2 items-center">
               <button className="cursor-pointer text-sm text-[#717182] font-medium hover:text-black dark:hover:text-white">
-                Sign In
+                Sign Up
               </button>
-              |
-              <button className="cursor-pointer text-sm text-[#717182] font-medium hover:text-black dark:hover:text-white">
+             <span className="block">|</span> 
+              <button className="cursor-pointer hidden 2xs:block text-sm text-[#717182] font-medium hover:text-black dark:hover:text-white">
                 Sign In
               </button>
             </div>
           </div>
         </div>
       </div>
-      <SecondaryHeader />
+      <SecondaryHeader darkmode={darkmode} setDarkmode={setDarkmode} />
     </header>
   );
 };

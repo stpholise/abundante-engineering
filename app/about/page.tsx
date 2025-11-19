@@ -102,7 +102,7 @@ const page = () => {
         </section>
         <section className=" dark:border-[#262626] mt-10 pt-10 ">
             <h3 className="text-2xl font-semibold text-center">Our Team</h3>
-            <div className="mx-auto   mt-6 md:grid grid-cols-3 gap-6  ">
+            <div className="mx-auto  flex flex-col gap-4 mt-6 sm:grid grid-cols-2 md:grid-cols-3 sm:gap-6  ">
               {teamMembers.map((item, index) => (
                 <TeamCard key={index} item={item} />
               ))}

@@ -1,18 +1,29 @@
+import AllNews from "./_component/AllNews";
+import NewsWrapper from "./_component/NewsWrapper";
+import { Suspense } from "react";
 
-
-const page = () => {
+const page = async ({
+  searchParams,
+}: {
+  searchParams: { filter?: string };
+}) => {
+  const params = await searchParams;
+  const filter = params.filter || "all";
   return (
-    <div className="px-16">
-        <div className="px-10">
-            <h1>News &  Insight</h1>
-            <p>Stay updated with the latest industry trends, company news, and elevator technology insights from the Abundant Engineering team.</p>
+    <div className="lg:px-16  bg-[#f9f9f9] dark:bg-[#121212] py-16">
+      <div className="max-w-6xl mx-auto ">
+       
 
-            <div className="">
-
-            </div>
+        <div className="">
+          <NewsWrapper>
+            <Suspense fallback={<div>Lodading...</div>}>
+              <AllNews filter={filter} />
+            </Suspense>
+          </NewsWrapper>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
