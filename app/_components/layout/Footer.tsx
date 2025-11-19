@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 const Footer = () => {
   return (
     <footer className="bg-[#f5f5f5] dark:bg-[#171717] text-[#121212] dark:text-white py-12 ">
