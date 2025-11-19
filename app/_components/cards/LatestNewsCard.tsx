@@ -34,7 +34,7 @@ const LatestNewsCard = ({
         <div className=" flex items-center justify-between gap-2  mt-4  ">
           <p
             className={clsx(
-              "text-[11px] px-2 py-1 flex items-center text-black border border-gray-200  rounded-lg h-5 "
+              "text-[11px] px-2 py-1 flex items-center text-[#262626] dark:text-gray-300 border border-gray-200  rounded-lg h-5 "
             )}
           >
             {category}
@@ -43,6 +43,7 @@ const LatestNewsCard = ({
             {date.toLocaleString("en-US", {
               day: "2-digit",
               month: "short",
+              year: "numeric",
             })}
           </p>
         </div>

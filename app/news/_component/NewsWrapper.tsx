@@ -30,8 +30,8 @@ const NewsWrapper = ({ children }: { children: React.ReactNode }) => {
             key={item.value}
             onClick={() => handleFilterChange(item.value)}
             className={clsx(
-              "mx-2 px-4 py-1 border rounded-lg text-sm text-[#7f7f8f]",
-              selectedFilter === item.value && "bg-red-500 text-white"
+              "mx-2 px-4 py-1 border rounded-lg hover:bg-gray-100 hover:text-[#7f7f8f] text-sm text-[#7f7f8f] cursor-pointer",
+              selectedFilter === item.value && "bg-red-500 text-white hover:text-white hover:bg-red-500"
             )}
           >
             {item.name}

@@ -8,6 +8,13 @@
 }
 
 @theme inline {
+  --breakpoint-2xs: 375px;
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 60rem;
+  --breakpoint-lg: 1024px;
+  --breakpont-xl: 1240px;
+  --breakpont-2xl: 1440px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

@@ -53,7 +53,7 @@ const AllNews = async ({ filter }: { filter?: string }) => {
   const rawData = await res.json();
   const data = (await rawData.result) as NewsItem[];
 
-  if (!data) {
+  if (!data || data.length == 0) {
     return <div>No data found</div>;
   }
 
@@ -65,7 +65,7 @@ const AllNews = async ({ filter }: { filter?: string }) => {
   return (
     
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-4">
-        {data.map((newsItem) => (
+        { data.map((newsItem) => (
           <div
             key={newsItem._id}
             className="max-w-96 min-h-95 border border-[#e6e6e6] dark:border-[#262626] rounded-xl px-6 py-6 flex flex-col gap-2 dark:bg-black hover:shadow-lg ease-in-out z-0 "

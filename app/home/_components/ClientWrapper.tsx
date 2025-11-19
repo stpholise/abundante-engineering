@@ -2,21 +2,22 @@
 import { ReactNode } from "react";
 import ServiceCard from "../../_components/cards/ServiceCard";
 import { useTranslation } from "../../i18n/client";
-// import LatestNewsCard from "../../_components/cards/LatestNewsCard";
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 
 type Service = { key: string; title: string; text: string; icon: string };
 
 const ClientWrapper = ({ children }: { children: ReactNode }) => {
+  const router = useRouter();
   const { t } = useTranslation("common");
   const rawServices = t("sections.services.items", { returnObjects: true });
   const services: Service[] = Array.isArray(rawServices) ? rawServices : [];
 
   const childrenArray = Array.isArray(children) ? children : [children];
 
-  const FeaturedProjects = childrenArray[0]; 
-  const LatestNews = childrenArray[1]; 
-   
+  const FeaturedProjects = childrenArray[0];
+  const LatestNews = childrenArray[1];
 
   return (
     <div className="bg-white dark:bg-[#0a0a0a]   min-h-screen w-full">
@@ -43,7 +44,7 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
         </div>
       </div>
       <section className="services  dark:bg-black">
-        <div className="container mx-auto lg:px-16 py-12  ">
+        <div className="container mx-auto lg:px-16 md:px-8 px:4 py-12  ">
           <div className="">
             <h2 className="text-2xl font-bold text-center dark:text-white text-black">
               {t("sections.services.title")}
@@ -76,11 +77,12 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
               Recent successful installations and maintenance projects
             </p>
           </div>
-          <div >
-            {FeaturedProjects}
-          </div>
+          <div>{FeaturedProjects}</div>
           <div className="">
-            <button className="mx-auto bg-red-600 text-white px-4 py-2 rounded-lg text-xs flex items-center gap-2 h-9">
+            <button
+              onClick={() => router.push("/projects")}
+              className="mx-auto bg-red-600 text-white px-4 py-2 rounded-lg text-xs flex items-center gap-2 h-9"
+            >
               View All Projects
               <Image
                 src={"/arrow-right-white.svg"}
@@ -103,21 +105,12 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
               Industry insights and company updates
             </p>
           </div>
+          <div className="">{LatestNews}</div>
           <div className="">
-            {LatestNews}
-            {/* {[...Array(3)].map((_, index) => (
-              <div className="" key={index}>
-                <LatestNewsCard
-                  category={`Category ${index + 1}`}
-                  title={`Latest News ${index + 1}`}
-                  text={`Description for latest news ${index + 1}`}
-                  date={`${new Date().toLocaleDateString()}`}
-                />
-              </div>
-            ))} */}
-          </div>
-          <div className="">
-            <button className="mx-auto  border border-[#e6e6e6] dark:border-[#262626] dark:bg-[#1c1c1c] dark:text-white  text-[#121212] hover:bg-[#eaeaea] px-4 py-2 rounded-lg text-xs flex items-center gap-2 h-8">
+            <button
+              onClick={() => router.push("/news")}
+              className="mx-auto  border border-[#e6e6e6] dark:border-[#262626] dark:bg-[#1c1c1c] dark:text-white  text-[#121212] hover:bg-[#eaeaea] px-4 py-2 rounded-lg text-xs flex items-center gap-2 h-8"
+            >
               View All News
               <Image
                 src={"/arrow-right-white.svg"}
