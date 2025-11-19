@@ -64,11 +64,11 @@ const AllNews = async ({ filter }: { filter?: string }) => {
 
   return (
     
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-4">
+      <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-6 my-8">
         { data.map((newsItem) => (
           <div
             key={newsItem._id}
-            className="max-w-96 min-h-95 border border-[#e6e6e6] dark:border-[#262626] rounded-xl px-6 py-6 flex flex-col gap-2 dark:bg-black hover:shadow-lg ease-in-out z-0 "
+            className="max-w-96 w-full min-h-95 border border-[#e6e6e6] dark:border-[#262626] rounded-xl px-6 py-6 flex flex-col gap-2 dark:bg-black hover:shadow-lg ease-in-out z-0 mx-auto "
           >
             {newsItem.mainImage.asset && (
               <Image

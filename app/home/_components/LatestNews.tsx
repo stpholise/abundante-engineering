@@ -15,22 +15,33 @@ type NewsItem = {
     title: string;
     description: string;
   }[];
+  mainImage: {
+    asset: {
+      url: string;
+    }
+  }
 };
 
 const LatestNews = async () => {
   const url = `https://2f7v75aq.api.sanity.io/v2025-11-04/data/query/production?query=+*[_type=="post"]|order(_createdAt desc){
-  _id,
-  _createdAt,
-  _type,
-  slug,
-  title,
-  description, 
-  name,
-  location,
-  categories[]->{
-  _id,
-  title,
-  description}
+    _id,
+    _createdAt,
+    _type,
+    slug,
+    title,
+    description, 
+    name,
+    location,
+    categories[]->{
+      _id,
+      title,
+      description
+    },
+    mainImage{
+      asset-> {
+        url
+      }
+  }
     }`;
 
   const res = await fetch(url, {
@@ -46,7 +57,7 @@ const LatestNews = async () => {
     return notFound();
   }
   return (
-    <div className="grid lg:grid-cols-3 gap-7 py-6 ">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 py-6 ">
       {data.slice(0, 3).map((values, index) => (
         <div className="" key={index}>
           <LatestNewsCard
@@ -55,6 +66,7 @@ const LatestNews = async () => {
             text={values.description}
             date={`${new Date(values._createdAt).toLocaleDateString()}`}
             slug={values.slug.current}
+            mainImage={values.mainImage}
           />
         </div>
       ))}

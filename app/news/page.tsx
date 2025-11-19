@@ -10,7 +10,7 @@ const page = async ({
   const params = await searchParams;
   const filter = params.filter || "all";
   return (
-    <div className="px-16 bg-[#f9f9f9] dark:bg-[#121212] py-16">
+    <div className="lg:px-16  bg-[#f9f9f9] dark:bg-[#121212] py-16">
       <div className="max-w-6xl mx-auto ">
        
 

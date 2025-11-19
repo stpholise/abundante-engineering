@@ -44,7 +44,7 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
         </div>
       </div>
       <section className="services  dark:bg-black">
-        <div className="container mx-auto lg:px-16 md:px-8 px:4 py-12  ">
+        <div className="sm:container mx-auto lg:px-16 md:px-8 px:4 py-12  ">
           <div className="">
             <h2 className="text-2xl font-bold text-center dark:text-white text-black">
               {t("sections.services.title")}
@@ -53,7 +53,7 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
               {t("sections.services.description")}
             </p>
           </div>
-          <div className="   grid grid-cols-3 justify-between gap-4 w-full py-6 px-1      dark:border-gray-700">
+          <div className="   border-black grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 justify-center xs:justify-between gap-4 w-full py-6 px-1    dark:border-gray-700">
             {services.map((service) => (
               <div className="" key={service.key}>
                 <ServiceCard
@@ -124,7 +124,7 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
         </div>
       </section>
       <div className="bg-[#114a99] h-40  ">
-        <div className="container px-16 py-10 flex items-center justify-evenly gap-16 text-white">
+        <div className="sm:container  mx-auto lg:px-16 py-10 flex items-center justify-evenly gap-6 lg:gap-16 text-white">
           <div className="flex flex-col items-center justify-center gap-1">
             <Image
               src={"/icons/medal-ribbon-light.svg"}

@@ -21,7 +21,7 @@ const SecondaryHeader = ({
       <div className="border-y  border-[#e0e0e0] dark:border-[#262626] bg-white dark:bg-black text-black dark:text-white text-sm ">
         <div className="md:container mx-auto py-2 px-4 lg:px-16 flex justify-between items-center relative">
           <button
-            onClick={() => setOpenMenu((prev) => !prev)}
+            onClick={() =>( setOpenMenu((prev) => !prev))}
             className="sm:hidden dark:invert"
           >
             <Image
