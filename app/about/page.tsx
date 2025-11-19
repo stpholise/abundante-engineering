@@ -1,6 +1,22 @@
-import ValuesCard from "./_components/ValuesCard";
-import TeamCard from "./_components/TeamCard";
-const page = () => {
+"use client";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const Page = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+  }, []);
+
+  function getAnimation(index: number) {
+    if (!isMobile) return "fade-up";
+    return index % 2 === 0 ? "fade-left" : "fade-right";
+  }
+
   return (
     <div className="bg-white dark:bg-[#121212] min-h-screen text-black dark:text-white   ">
       <main className="container mx-auto px-4 lg:px-16 py-10">
@@ -74,12 +90,25 @@ const page = () => {
 
           <div className="grid grid-cols-1 mt-1 md:grid-cols-3 gap-4 p-4">
             {values.map((value, index) => (
-              <ValuesCard
+              <div
                 key={index}
-                icon={value.icon}
-                title={value.title}
-                description={value.description}
-              />
+                data-aos={getAnimation(index)}
+                className="flex flex-col justify-center items-center border gap-4 border-[#e6e6e6] dark:border-[#262626] rounded-lg  hover:shadow-lg duration-300 ease-in-out cursor-pointer py-6 px-6"
+              >
+                <Image
+                  src={value.icon}
+                  alt="Value icon"
+                  width={200}
+                  height={100}
+                  className="rounded-t-lg  size-8 "
+                />
+                <h4 className="capitalize text-lg font-medium text-[#0a0a0a] dark:text-white">
+                  {value.title}
+                </h4>
+                <p className=" text-[#717182] text-center text-xs  ">
+                  {value.description}
+                </p>
+              </div>
             ))}
           </div>
         </section>
@@ -101,12 +130,34 @@ const page = () => {
           </div>
         </section>
         <section className=" dark:border-[#262626] mt-10 pt-10 ">
-            <h3 className="text-2xl font-semibold text-center">Our Team</h3>
-            <div className="mx-auto  flex flex-col gap-4 mt-6 sm:grid grid-cols-2 md:grid-cols-3 sm:gap-6  ">
-              {teamMembers.map((item, index) => (
-                <TeamCard key={index} item={item} />
-              ))}
-            </div>
+          <h3 className="text-2xl font-semibold text-center">Our Team</h3>
+          <div className="mx-auto  flex flex-col gap-4 mt-6 sm:grid grid-cols-2 md:grid-cols-3 sm:gap-6  ">
+            {teamMembers.map((item, index) => (
+              <div
+                key={index}
+                data-aos="fade-up"
+                className="  flex items-center gap-1 text-center  dark:border-[#262626] border border-[#e6e6e6] rounded-2xl px-6 py-4 flex-col hover:shadow-lg duration-300 ease-in-out cursor-pointer "
+              >
+                <Image
+                  src={"/globe.svg"}
+                  alt="team member"
+                  width={200}
+                  height={200}
+                  className="size-20 rounded-full"
+                />
+
+                <h4 className="text-base font-medium px-2 py-0.5  my-1.5 text-[#0a0a0a] dark:text-white rounded-md ">
+                  {item.name}
+                </h4>
+
+                <p className="text-[#717182] text-xs ">{item.role}</p>
+                <p className="text-[#717182] text-xs ">{item.role}</p>
+
+                <p className="text-[#717182] text-xs mt-2 ">{item.extraInfo}</p>
+                <p className="text-[#717182] text-xs mt-2 ">{item.phone}</p>
+              </div>
+            ))}
+          </div>
         </section>
       </main>
     </div>
@@ -164,29 +215,34 @@ const journey: { year: string; event: string }[] = [
   { year: "2022", event: "Introduced AI-powered maintenance solutions." },
 ];
 
-const teamMembers: { name: string; role: string; photo: string; phone?: string; extraInfo?: string }[] = [
-
+const teamMembers: {
+  name: string;
+  role: string;
+  photo: string;
+  phone?: string;
+  extraInfo?: string;
+}[] = [
   {
     name: "John Doe",
-    role: "Chief Executive Officer",  
+    role: "Chief Executive Officer",
     photo: "/team/john_doe.jpg",
     phone: "555-1234",
-    extraInfo: "Over 20 years of experience in the elevator industry."
+    extraInfo: "Over 20 years of experience in the elevator industry.",
   },
   {
     name: "Jane Smith",
     role: "Chief Technology Officer",
     photo: "/team/jane_smith.jpg",
     phone: "555-5678",
-    extraInfo: "Expert in elevator technology and innovation."
+    extraInfo: "Expert in elevator technology and innovation.",
   },
   {
     name: "Emily Johnson",
     role: "Chief Operating Officer",
     photo: "/team/emily_johnson.jpg",
     phone: "555-8765",
-    extraInfo: "Specializes in operational efficiency and project management."
+    extraInfo: "Specializes in operational efficiency and project management.",
   },
 ];
 
-export default page;
+export default Page;

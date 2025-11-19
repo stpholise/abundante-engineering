@@ -25,7 +25,7 @@ const FeaturedProjectCard = ({
   };
 }) => {
   return (
-    <div className=" max-w-96 min-w-70 mx-auto w-full min-h-95 border border-[#e6e6e6] dark:border-[#262626] rounded-xl px-6 py-6 flex flex-col dark:bg-black hover:shadow-lg ease-in-out z-0">
+    <div data-aos="fade-up" className=" max-w-96 min-w-70 mx-auto w-full min-h-95 border border-[#e6e6e6] dark:border-[#262626] rounded-xl px-6 py-6 flex flex-col dark:bg-black hover:shadow-lg ease-in-out z-0">
       <div className="w-full h-fit overflow-hidden rounded-lg z-0">
         <Image
           src={image.asset.url || "/hero.jpg"}
