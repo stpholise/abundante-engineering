@@ -1,4 +1,4 @@
-// import ProjectCard from "@/app/projects/components/ProjectCard";
+
 
 import FeaturedProjectCard from "@/app/_components/cards/FeaturedProjectCard";
 import { Slug } from "sanity";

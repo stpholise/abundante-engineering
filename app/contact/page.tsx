@@ -1,6 +1,5 @@
-"use client";
-import { Formik, Form, Field, FormikHelpers } from "formik";
-import MapEmbed from "../_components/MapEmbed";
+"use client"
+import { Formik, Form, Field } from "formik"; 
 
 const page = () => {
   return (
@@ -26,22 +25,36 @@ const page = () => {
             >
               {({ isSubmitting }) => (
                 <Form>
-                  <Field type="text" name="name" placeholder="Your Name" />
-                  <Field type="email" name="email" placeholder="Your Email" />
+                  <Field
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    className="border border-gray-200 rounded-md"
+                  />
+                  <Field
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    className="border border-gray-200 rounded-md"
+                  />
                   <Field
                     as="textarea"
                     name="message"
                     placeholder="Your Message"
+                    className="border border-gray-200 rounded-md"
                   />
-                  <button type="submit" disabled={isSubmitting}>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="border border-gray-200 rounded-md"
+                  >
                     Submit
                   </button>
                 </Form>
               )}
             </Formik>
           </section>
-          <section>
-            <MapEmbed />
+          <section> 
           </section>
         </div>
       </main>

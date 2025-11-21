@@ -35,7 +35,7 @@ const Footer = () => {
                     className="flex items-center gap-2.5 leading-4.5 mt-2.5 cursor-pointer "
                   >
                     <Link href={info.link} passHref>
-                      <span className="text-xs hover:text-[#0a0a0a] dark:text-gray-400 dark:hover:text-white capitalize">
+                      <span className="text-xs hover:text-[#0a0a0a] text-[#7f7f8f] dark:text-gray-400 dark:hover:text-white capitalize">
                         {info.name}
                       </span>
                     </Link>
@@ -54,7 +54,7 @@ const Footer = () => {
                     className="flex items-center gap-2.5 leading-4.5 mt-2.5 cursor-pointer "
                   >
                     <Link href={info.link} passHref>
-                      <span className="text-xs hover:text-[#0a0a0a] dark:text-gray-400 dark:hover:text-white capitalize">
+                      <span className="text-xs hover:text-[#0a0a0a] text-[#7f7f8f] dark:text-gray-400 dark:hover:text-white capitalize">
                         {info.name}
                       </span>
                     </Link>

@@ -1,19 +1,9 @@
-"use client";
+ 
 import Image from "next/image";
-import { useState, useEffect } from "react";
-
-const Page = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    handleResize();
-  }, []);
+ 
+const page = () => { 
 
   function getAnimation(index: number) {
-    if (!isMobile) return "fade-up";
     return index % 2 === 0 ? "fade-left" : "fade-right";
   }
 
@@ -93,7 +83,7 @@ const Page = () => {
               <div
                 key={index}
                 data-aos={getAnimation(index)}
-                className="flex flex-col justify-center items-center border gap-4 border-[#e6e6e6] dark:border-[#262626] rounded-lg  hover:shadow-lg duration-300 ease-in-out cursor-pointer py-6 px-6"
+                className="flex flex-col justify-center items-center border gap-4 min-h-60 border-[#e6e6e6] dark:border-[#262626] rounded-lg  hover:shadow-lg duration-300 ease-in-out cursor-pointer py-6 px-6"
               >
                 <Image
                   src={value.icon}
@@ -245,4 +235,4 @@ const teamMembers: {
   },
 ];
 
-export default Page;
+export default page;
