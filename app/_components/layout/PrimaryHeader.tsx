@@ -3,12 +3,10 @@ import Image from "next/image";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
 import SecondaryHeader from "./SecondaryHeader";
-import { useTranslation } from "../../i18n/client";
 import Link from "next/link";
 
 const PrimaryHeader = () => {
   const [darkmode, setDarkmode] = useState<boolean>(false);
-  const { t } = useTranslation("common");
 
   useEffect(() => {
     const html = document.documentElement;
@@ -21,7 +19,7 @@ const PrimaryHeader = () => {
     }
   }, [darkmode]);
 
-  const { i18n } = useTranslation();
+  
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50">
@@ -36,14 +34,14 @@ const PrimaryHeader = () => {
               className=" size-8"
             />
             <Link href={"/"} className="text-xs text-black dark:text-white">
-              {t("companyName")}  
+              Abundant Engineering
             </Link>
           </div>
 
           <div className="flex items-ceter gap-4">
             <div className="xs:flex gap-1 items-center  justify-center hidden ">
               <Image src={"/globe.svg"} alt="language" width="12" height="12" />
-              <button
+              {/* <button
                 className="text-xs cursor-pointer"
                 onClick={() =>
                   i18n.changeLanguage(
@@ -60,7 +58,7 @@ const PrimaryHeader = () => {
                   : i18n.language === "de"
                     ? "FR"
                     : "EN"}
-              </button>
+              </button> */}
             </div>
             <div className=" hidden xs:flex items-center gap-1.5 ">
               <Image

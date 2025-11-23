@@ -64,7 +64,7 @@ const AllNews = async ({ filter }: { filter?: string }) => {
 
   return (
     
-      <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-6 my-8">
+      <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-6 my-8">
         { data.map((newsItem) => (
           <div
             key={newsItem._id}
@@ -98,9 +98,9 @@ const AllNews = async ({ filter }: { filter?: string }) => {
             <h3 className="text-xl font-bold text-[#262626] dark:text-[#afafaf]">
               {newsItem.title}
             </h3>
-            <p className="text-[#717182] dark:text-[#afafaf] grow text-sm  h-fit ">
+            <div className="text-[#717182] dark:text-[#afafaf] grow text-sm  h-fit ">
               {newsItem.body && <PortableTextPreview value={newsItem.body} />}
-            </p>
+            </div>
             <div className="flex items-center justify-between mt-auto pt-4">
               <p className="text-xs text-[#717182] dark:text-[#afafaf] flex gap-2">
                 <Image

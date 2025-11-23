@@ -49,7 +49,7 @@ const LatestNews = async () => {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error(`Failed to fetch data`);
   }
   const rawData = await res.json();
   const data = (await rawData.result) as NewsItem[];
@@ -57,7 +57,7 @@ const LatestNews = async () => {
     return notFound();
   }
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 py-6 ">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-7 py-6 ">
       {data.slice(0, 3).map((values, index) => (
         <div className="" key={index}>
           <LatestNewsCard

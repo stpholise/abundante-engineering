@@ -1,10 +1,8 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
-import { useTranslation } from "../../i18n/client";
-import { SetStateAction, useState } from "react";
-import clsx from "clsx";
-import { Dispatch } from "react";
+import Image from "next/image"; 
+import { SetStateAction, useState, Dispatch } from "react";
+import clsx from "clsx"; 
 
 const SecondaryHeader = ({
   darkmode,
@@ -12,8 +10,7 @@ const SecondaryHeader = ({
 }: {
   darkmode: boolean;
   setDarkmode: Dispatch<SetStateAction<boolean>>;
-}) => {
-  const { t } = useTranslation("common");
+}) => { 
   const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   return (
@@ -83,7 +80,7 @@ const SecondaryHeader = ({
                     href={link.href}
                     className=" px-3 py-2 sm:rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-sm sm:text-xs capitalize border-b sm:border-b-0 border-gray-500 w-full sm:w-fit block"
                   >
-                    {t(link.name.toLowerCase())}
+                    {link.name} 
                   </Link>
                 </li>
               ))}
@@ -104,7 +101,7 @@ const SecondaryHeader = ({
           </div>
         </div>
       </div>
-      {darkmode && (
+      {openMenu && (
         <div
           onClick={() => setOpenMenu(false)}
           className="bg-[rgba(0,0,0,0.9)] dark:bg-[(rgba(0,0,0,0.1))] top-0 left-0 right-0 bottom-0  fixed"
