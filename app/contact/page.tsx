@@ -38,7 +38,7 @@ const page = () => {
                       type="text"
                       name="name"
                       placeholder="Your Name"
-                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100  dark:bg-[#0a0a0a]"
+                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100  dark:bg-[#0a0a0a] outline-none"
                     />
                   </div>
                   <div className="">
@@ -53,7 +53,7 @@ const page = () => {
                       type="email"
                       name="email"
                       placeholder="Phone"
-                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100 dark:bg-[#0a0a0a] "
+                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100 dark:bg-[#0a0a0a] outline-none "
                     />
                   </div>
                   <div className="">
@@ -68,7 +68,7 @@ const page = () => {
                       type="email"
                       name="email"
                       placeholder="Your Email"
-                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100 dark:bg-[#0a0a0a] "
+                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100 dark:bg-[#0a0a0a] outline-none "
                     />
                   </div>
                   <div className="">
@@ -83,7 +83,7 @@ const page = () => {
                       as="textarea"
                       name="message"
                       placeholder="Your Message"
-                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100  dark:bg-[#0a0a0a]"
+                      className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100  dark:bg-[#0a0a0a] outline-none"
                     />
                   </div>
                   <button

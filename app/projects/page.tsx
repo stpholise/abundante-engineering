@@ -20,7 +20,7 @@ const params = await searchParams;
     conditions.push(`projectCategory == "${service}"`); 
   }
 
-  if (status !== "All" &&  status !== undefined) {
+  if (status !== "all" &&  status !== undefined) {
     conditions.push(`completed == ${status}`);
   }
 
@@ -29,7 +29,7 @@ const params = await searchParams;
   // }
 
   const filterString =
-    conditions.length > 0
+    conditions.length !== 0
       ? `*[_type=="project" && ${conditions.join(" && ")}]`
       : `*[_type=="project"]`;
 
