@@ -45,6 +45,7 @@ export default async function FetchProjects() {
   },
 
     }`;
+    
 
   const res = await fetch(url, {
     cache: "no-store",

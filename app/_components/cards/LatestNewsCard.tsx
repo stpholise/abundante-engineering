@@ -17,23 +17,27 @@ const LatestNewsCard = ({
   slug: string;
   mainImage: {
     asset: {
-      url: string
-    }
-  }
+      url: string;
+    };
+  };
 }) => {
   if (typeof date === "string") {
     date = new Date(date);
   }
   return (
     <Link href={`/news/${slug}`}>
-      <div   data-aos="fade-up" className="max-w-96 min-h-95 min-w-70 border mx-auto w-full border-[#e6e6e6] dark:border-[#262626] rounded-xl px-6 py-6 flex flex-col dark:bg-black hover:shadow-lg ease-in-out z-0">
+      <div
+        data-aos="fade-up"
+        className="max-w-96 min-h-95 min-w-70 border mx-auto w-full border-[#e6e6e6] dark:border-[#262626] rounded-xl px-6 py-6 flex flex-col dark:bg-black hover:shadow-lg ease-in-out z-0"
+      >
         <div className="w-full h-fit overflow-hidden rounded-lg z-0">
           <Image
             src={mainImage.asset.url || "/hero.jpg"}
             alt="service"
-            className="object-cover w-full h-40 max-h-40 rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out z-0"
+            className="object-cover min-w-full h-40 max-h-40 rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out z-0"
             width={420}
             height={360}
+            style={{ width: "auto", height: "auto" }}
           />
         </div>
 
