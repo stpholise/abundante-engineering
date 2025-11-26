@@ -34,6 +34,9 @@ const ProjectCard = ({
   description,
   sector,
 }: ProjectCardProps) => {
+
+  
+
   return (
     <div
       data-aos="fade-up"

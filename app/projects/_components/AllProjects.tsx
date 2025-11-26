@@ -12,7 +12,7 @@ type Data = {
   location: string;
   projectCategory: string;
   slug: Slug;
-  sector:string;
+  sector: string;
   gallery: {
     asset: {
       _id: string;
@@ -24,8 +24,9 @@ type Data = {
   start: string;
   end: string;
 };
-const AllProjects = async () => {
-  const url = `https://2f7v75aq.api.sanity.io/v2025-11-04/data/query/production?query=+*[_type=="project"]{
+const AllProjects = async ({ filterString }: { filterString: string }) => {
+  
+  const queryFilter = `${filterString}{
   _id,
   _createdAt,
   _type,
@@ -50,6 +51,7 @@ const AllProjects = async () => {
   sector
 
     }`;
+  const url = `https://2f7v75aq.api.sanity.io/v2025-11-04/data/query/production?query=+${encodeURIComponent(queryFilter)}`;
 
   const res = await fetch(url, {
     cache: "no-store",
@@ -67,25 +69,24 @@ const AllProjects = async () => {
   }
 
   return (
- 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full  ">
-        {data &&
-          data.map((project: Data) => (
-            <ProjectCard
-              title={project.name}
-              location={project.location}
-              status={project.completed}
-              category={project.projectCategory}
-              slug={project.slug}
-              key={project._id}
-              image={project.gallery[0]}
-              start={project.start}
-              end={project.end}
-              description={project.description}
-              sector={project.sector}
-            />
-          ))}
-      </div> 
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full  ">
+      {data &&
+        data.map((project: Data) => (
+          <ProjectCard
+            title={project.name}
+            location={project.location}
+            status={project.completed}
+            category={project.projectCategory}
+            slug={project.slug}
+            key={project._id}
+            image={project.gallery[0]}
+            start={project.start}
+            end={project.end}
+            description={project.description}
+            sector={project.sector}
+          />
+        ))}
+    </div>
   );
 };
 

@@ -4,7 +4,37 @@ import Image from "next/image";
 import { Suspense } from "react";
 import { TrippleSpiner } from "../_components/utils/Loading";
 
-const Page = () => {
+const Page = async ({
+  searchParams,
+}: {
+  searchParams: { service?: string; status?: string; location?: string };
+}) => {
+const params = await searchParams;
+
+  const service = params.service;
+  const status = params.status; 
+ console.log(`projectCategory == "${service}"`)
+  const conditions = [];
+
+  if (service !== "all" &&  status !== undefined) {
+    conditions.push(`projectCategory == "${service}"`); 
+  }
+
+  if (status !== "All" &&  status !== undefined) {
+    conditions.push(`completed == ${status}`);
+  }
+
+  // if (location !== "All" &&  status !== undefined) {
+  //   conditions.push(`location == "${location}"`);
+  // }
+
+  const filterString =
+    conditions.length > 0
+      ? `*[_type=="project" && ${conditions.join(" && ")}]`
+      : `*[_type=="project"]`;
+
+      
+
   return (
     <div className="bg-white dark:bg-[#121212] min-h-screen text-black dark:text-white   ">
       <main className="container mx-auto  lg:px-16 py-10">
@@ -24,7 +54,7 @@ const Page = () => {
               </div>
             }
           >
-            <AllProjects />
+            <AllProjects filterString={filterString} />
           </Suspense>
 
           <section className="mt-6 py-8 px-4 xs:px-8 h-44 rounded-lg bg-[#f2f2f5] dark:bg-black w-full flex flex-col items-center justify-center">

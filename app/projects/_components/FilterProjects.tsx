@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState,  } from "react";
 import Select from "react-select";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -10,27 +10,28 @@ type OptionType = {
 
 const FilterProjects = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const [serviceCategory, setServiceCategory] = useState<OptionType>({
-    value: searchParams.get("service") || "all",
-    label: searchParams.get("service") || "All Types",
+    value: "all",
+    label: "All Types",
   });
   const [status, setStatus] = useState<OptionType>({
-    value: searchParams.get("status") || "all",
-    label: searchParams.get("status") || "All Status",
+    value:  "all",
+    label: "All Status",
   });
   const [location, setLocation] = useState<OptionType>({
-    value: searchParams.get("location") || "all",
-    label: searchParams.get("location") || "All Locations",
+    value: "all",
+    label: "All Locations",
   });
 
-  const handleFilterChange = () => {
+
+  const updateURL = (service:OptionType, stat: OptionType, loc:OptionType) => {
     const params = new URLSearchParams();
 
-    if (serviceCategory.value !== "all")
-      params.set("service", serviceCategory.value);
-    if (status.value !== "all") params.set("status", status.value);
-    // if (location.value !== "All") params.set("location", location.value);
+    if (service.value !== "all")
+      params.set("service", service.value);
+    if (stat.value !== "all") params.set("status", stat.value);
+    if (loc.value !== "all") params.set("location", loc.value);
     router.push(`?${params.toString()}`, { scroll: false });
   };
 
@@ -43,8 +44,9 @@ const FilterProjects = () => {
           value={serviceCategory}
           defaultValue={services[0]}
           onChange={(option) => {
+            const updated = option as OptionType;
             setServiceCategory(option as OptionType);
-            handleFilterChange();
+            updateURL(updated, status, location);
           }}
           options={services}
           className="outline-none border-none w-full"
@@ -84,8 +86,9 @@ const FilterProjects = () => {
           value={status}
           defaultValue={statuses[0]}
           onChange={(option) => {
+            const updated = option as OptionType;
             setStatus(option as OptionType);
-            handleFilterChange();
+            updateURL(serviceCategory, updated, location);
           }}
           options={statuses}
           className="outline-none border-none w-full"
@@ -125,8 +128,9 @@ const FilterProjects = () => {
           value={location}
           defaultValue={locations[0]}
           onChange={(option) => {
+            const updated = option as OptionType;
             setLocation(option as OptionType);
-            handleFilterChange();
+            updateURL(serviceCategory, status, updated);
           }}
           options={locations}
           className="outline-none border-none w-full"
@@ -168,10 +172,10 @@ const services: { value: string; label: string }[] = [
   { value: "maintenance", label: "Maintenance" },
   { value: "modernization", label: "Modernization" },
 ];
-const statuses: { value: string; label: string }[] = [
+const statuses: { value: string | boolean; label: string }[] = [
   { value: "all", label: "All Statuses" },
-  { value: "completed", label: "Completed" },
-  { value: "ongoing", label: "Ongoing" },
+  { value: true, label: "Completed" },
+  { value: false, label: "Ongoing" },
   // { value: "upcoming", label: "Upcoming" },
 ];
 const locations: { value: string; label: string }[] = [
