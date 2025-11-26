@@ -1,24 +1,38 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Select from "react-select";
+import { useRouter, useSearchParams } from "next/navigation";
+
 type OptionType = {
   value: string;
   label: string;
 };
 
 const FilterProjects = () => {
-  const [serviceCategory, setServiceCategory] = useState<OptionType | null>({
-    value: "All",
-    label: "All Types",
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [serviceCategory, setServiceCategory] = useState<OptionType>({
+    value: searchParams.get("service") || "all",
+    label: searchParams.get("service") || "All Types",
   });
-  const [status, setStatus] = useState<OptionType | null>({
-    value: "All",
-    label: "All Status",
+  const [status, setStatus] = useState<OptionType>({
+    value: searchParams.get("status") || "all",
+    label: searchParams.get("status") || "All Status",
   });
-  const [location, setLocation] = useState<OptionType | null>({
-    value: "All",
-    label: "All Locations",
+  const [location, setLocation] = useState<OptionType>({
+    value: searchParams.get("location") || "all",
+    label: searchParams.get("location") || "All Locations",
   });
+
+  const handleFilterChange = () => {
+    const params = new URLSearchParams();
+
+    if (serviceCategory.value !== "all")
+      params.set("service", serviceCategory.value);
+    if (status.value !== "all") params.set("status", status.value);
+    // if (location.value !== "All") params.set("location", location.value);
+    router.push(`?${params.toString()}`, { scroll: false });
+  };
 
   return (
     <div className="flex flex-wrap gap-4 justify-center">
@@ -28,7 +42,10 @@ const FilterProjects = () => {
           id="service"
           value={serviceCategory}
           defaultValue={services[0]}
-          onChange={setServiceCategory}
+          onChange={(option) => {
+            setServiceCategory(option as OptionType);
+            handleFilterChange();
+          }}
           options={services}
           className="outline-none border-none w-full"
           styles={{
@@ -66,7 +83,10 @@ const FilterProjects = () => {
           id="status"
           value={status}
           defaultValue={statuses[0]}
-          onChange={setStatus}
+          onChange={(option) => {
+            setStatus(option as OptionType);
+            handleFilterChange();
+          }}
           options={statuses}
           className="outline-none border-none w-full"
           styles={{
@@ -104,7 +124,10 @@ const FilterProjects = () => {
           id="location"
           value={location}
           defaultValue={locations[0]}
-          onChange={setLocation}
+          onChange={(option) => {
+            setLocation(option as OptionType);
+            handleFilterChange();
+          }}
           options={locations}
           className="outline-none border-none w-full"
           styles={{
@@ -140,24 +163,23 @@ const FilterProjects = () => {
 };
 
 const services: { value: string; label: string }[] = [
-  { value: "All", label: "All Types" },
-  { value: "Installation", label: "Installation" },
-  { value: "Maintenance", label: "Maintenance" },
-  { value: "Modernization", label: "Modernization" },
+  { value: "all", label: "All Types" },
+  { value: "installation", label: "Installation" },
+  { value: "maintenance", label: "Maintenance" },
+  { value: "modernization", label: "Modernization" },
 ];
 const statuses: { value: string; label: string }[] = [
-  { value: "All", label: "All Statuses" },
-  { value: "Completed", label: "Completed" },
-  { value: "Ongoing", label: "Ongoing" },
-  { value: "Upcoming", label: "Upcoming" },
+  { value: "all", label: "All Statuses" },
+  { value: "completed", label: "Completed" },
+  { value: "ongoing", label: "Ongoing" },
+  // { value: "upcoming", label: "Upcoming" },
 ];
 const locations: { value: string; label: string }[] = [
-  { value: "All", label: "All Locations" },
+  { value: "all", label: "All Locations" },
   { value: "Addis Ababa", label: "Addis Ababa" },
   { value: "Gondar", label: "Gondar" },
   { value: "Mekelle", label: "Mekelle" },
   { value: "Bahir Dar", label: "Bahir Dar" },
 ];
-
 
 export default FilterProjects;

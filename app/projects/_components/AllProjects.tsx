@@ -12,6 +12,7 @@ type Data = {
   location: string;
   projectCategory: string;
   slug: Slug;
+  sector:string;
   gallery: {
     asset: {
       _id: string;
@@ -43,6 +44,10 @@ const AllProjects = async () => {
     alt,
     caption
   },
+   start,
+  end, 
+  scope,
+  sector
 
     }`;
 
@@ -62,8 +67,8 @@ const AllProjects = async () => {
   }
 
   return (
-    <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+ 
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full  ">
         {data &&
           data.map((project: Data) => (
             <ProjectCard
@@ -77,10 +82,10 @@ const AllProjects = async () => {
               start={project.start}
               end={project.end}
               description={project.description}
+              sector={project.sector}
             />
           ))}
-      </div>
-    </div>
+      </div> 
   );
 };
 

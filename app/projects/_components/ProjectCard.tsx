@@ -9,6 +9,7 @@ type ProjectCardProps = {
   category: string;
   location: string;
   description: string;
+  sector: string;
   slug: Slug;
   image: {
     alt: string;
@@ -31,6 +32,7 @@ const ProjectCard = ({
   start,
   end,
   description,
+  sector,
 }: ProjectCardProps) => {
   return (
     <div
@@ -88,18 +90,20 @@ const ProjectCard = ({
               {location}
             </span>
           </p>
-          <p className="flex  items-center mt-2">
-            <Image
-              src={"/icons/building-light.svg"}
-              alt="arrow"
-              width={14}
-              height={13}
-              className=" cursor-pointer"
-            />
-            <span className="text-[11px] font-medium text-gray-600 dark:text-gray-400 ml-1">
-              Residential
-            </span>
-          </p>
+          {sector && (
+            <p className="flex  items-center mt-2">
+              <Image
+                src={"/icons/building-light.svg"}
+                alt="arrow"
+                width={14}
+                height={13}
+                className=" cursor-pointer"
+              />
+              <span className="text-[11px] font-medium text-gray-600 dark:text-gray-400 ml-1">
+                {sector && sector}
+              </span>
+            </p>
+          )}
           <p className=" flex  items-center mt-2">
             <Image
               src={"/icons/calendar-light.svg"}

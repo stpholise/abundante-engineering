@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
             </div>
             <section className="">
-              <div className="max-w-70 min-w-70 md:min-w-60 lg:w-60 ">
+              <div className="sm:max-w-70 w-full min-w-70 md:min-w-60 lg:w-60 ">
                 <h2 className="text-sm font-semibold text-left text-black dark:text-white ">
                   Connect
                 </h2>

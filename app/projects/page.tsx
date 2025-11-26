@@ -1,12 +1,14 @@
 import FilterProjects from "./_components/FilterProjects";
 import AllProjects from "./_components/AllProjects";
 import Image from "next/image";
+import { Suspense } from "react";
+import { TrippleSpiner } from "../_components/utils/Loading";
 
 const Page = () => {
   return (
     <div className="bg-white dark:bg-[#121212] min-h-screen text-black dark:text-white   ">
-      <main className="container mx-auto px-4 lg:px-16 py-10">
-        <div className="container mx-auto px-4  py-10 flex flex-col items-center gap-6">
+      <main className="container mx-auto  lg:px-16 py-10">
+        <div className=" mx-auto  px-0 py-10 flex flex-col items-center gap-6  ">
           <h1 className="text-red-500 text-3xl font-bold text-center">
             Our Projects{" "}
           </h1>
@@ -14,14 +16,17 @@ const Page = () => {
             Successful elevator installations and maintenance projects across
             Ethiopia. From residential buildings to major commercial complexes.
           </p>
-          <section className="filter">
-            <FilterProjects />
-          </section>
-          <section className="projects">
-            <div className="">
-              <AllProjects />
-            </div>
-          </section>
+          <FilterProjects />
+          <Suspense
+            fallback={
+              <div className="relative py-8">
+                <TrippleSpiner />
+              </div>
+            }
+          >
+            <AllProjects />
+          </Suspense>
+
           <section className="mt-6 py-8 px-4 xs:px-8 h-44 rounded-lg bg-[#f2f2f5] dark:bg-black w-full flex flex-col items-center justify-center">
             <h3 className="font-semibold text-center">
               Ready to Start Your Project
