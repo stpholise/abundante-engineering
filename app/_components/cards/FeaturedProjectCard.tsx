@@ -32,9 +32,10 @@ const FeaturedProjectCard = ({
         <Image
           src={image.asset.url || "/hero.jpg"}
           alt="service"
-          className="object-cover w-full h-40 max-h-40 rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out z-0"
-          width={420}
+          className="object-cover min-w-full h-40 max-h-40 rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out z-0"
+          width={360}
           height={360}
+        style={{ width: 'auto', height: 'auto' }}
         />
       </div>
 

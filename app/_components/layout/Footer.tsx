@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 const Footer = () => {
   return (
     <footer className="bg-[#f5f5f5] dark:bg-[#171717] text-[#121212] dark:text-white py-12 ">
       <div className="container mx-auto px-4 lg:px-16">
         <section className="  flex gap-8 justify-between border-b border-[#262626] pb-8">
-          <div className="flex md:flex-row flex-col sm:flex-row  lg:justify-between  gap-6 sm:gap-10   lg:gap-12   flex-wrap md:justify-between  ">
+          <div className="flex md:flex-row flex-col sm:flex-row  lg:justify-between  gap-6 sm:gap-10   lg:gap-12   flex-wrap md:justify-between   ">
             <div className="w-60  ">
               <h2 className="text-sm font-semibold text-left text-black dark:text-white">
                 Contact{" "}
@@ -63,7 +62,7 @@ const Footer = () => {
               </div>
             </div>
             <section className="">
-              <div className="max-w-70 min-w-70 lg:w-70 ">
+              <div className="sm:max-w-70 w-full min-w-70 md:min-w-60 lg:w-60 ">
                 <h2 className="text-sm font-semibold text-left text-black dark:text-white ">
                   Connect
                 </h2>

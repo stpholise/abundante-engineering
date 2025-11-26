@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
 import { SetStateAction, useState, Dispatch } from "react";
-import clsx from "clsx"; 
+import clsx from "clsx";
 
 const SecondaryHeader = ({
   darkmode,
@@ -10,15 +10,15 @@ const SecondaryHeader = ({
 }: {
   darkmode: boolean;
   setDarkmode: Dispatch<SetStateAction<boolean>>;
-}) => { 
+}) => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
-
+ 
   return (
     <div className="z-50">
       <div className="border-y  border-[#e0e0e0] dark:border-[#262626] bg-white dark:bg-black text-black dark:text-white text-sm ">
         <div className="md:container mx-auto py-2 px-4 lg:px-16 flex justify-between items-center relative">
           <button
-            onClick={() =>( setOpenMenu((prev) => !prev))}
+            onClick={() => setOpenMenu((prev) => !prev)}
             className="sm:hidden dark:invert"
           >
             <Image
@@ -77,10 +77,11 @@ const SecondaryHeader = ({
               {navLinks.map((link) => (
                 <li key={link.name} className="">
                   <Link
+                    onClick={() => setOpenMenu(false)}
                     href={link.href}
                     className=" px-3 py-2 sm:rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-sm sm:text-xs capitalize border-b sm:border-b-0 border-gray-500 w-full sm:w-fit block"
                   >
-                    {link.name} 
+                    {link.name}
                   </Link>
                 </li>
               ))}
