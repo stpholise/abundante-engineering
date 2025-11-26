@@ -59,9 +59,9 @@ const AllProjects = async ({ filterString }: { filterString: string }) => {
 
   const rawData = await res.json();
   const data = await rawData.result;
-  if (!data) {
+  if (!data || data.length < 1) {
     return (
-      <div className="text-[#262626] dark:text-[#efefef]">
+      <div className="text-[#262626]  dark:text-[#efefef]">
         {" "}
         No Project Found
       </div>
