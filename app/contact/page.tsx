@@ -97,8 +97,8 @@ const page = () => {
               )}
             </Formik>
           </section>
-          <section className="flex flex-col gap-5">
-            <div className="max-w-xl border-gray-200 border rounded-lg">
+          <section className="flex flex-col gap-5 justify-center max-w-xl mx-auto my-6">
+            <div className="max-w-xl w-full border-gray-200 border rounded-lg mx-auto">
               <MapEmbed />
             </div>
             <div className="border border-gray-200 rounded-lg px-6 py-6 text-sm flex flex-col gap-2">

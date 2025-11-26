@@ -88,7 +88,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     }
     return (
       <div className="bg-blue bg-white dark:bg-[#0a0a0a] w-full ">
-        <div className="container px-16 mx-auto py-10">
+        <div className="container lg:px-16 mx-auto py-10">
           <div className=" text-xs flex items-center mb-6">
             <Link
               href="/projects"
@@ -154,13 +154,13 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               </div>
             </div>
           </div>
-          <main className="grid grid-cols-[8fr_4fr] gap-6 mt-10">
-            <div className="flex flex-col gap-6">
+          <main className="lg:grid lg:grid-cols-[8fr_4fr] grid-cols-1 gap-6 mt-10">
+            <div className="flex flex-col gap-6 mb-6">
               <section className="border border-gray-200 rounded-lg px-4 py-4">
                 <h3 className="text-sm font-medium mb-4 text-[#262626]  dark:text-[#fafafa] ">
                   Project overview
                 </h3>
-                <div className="flex gap-4 justify-evenly">
+                <div className="flex flex-wrap  md:flex-row  lg:flex-nowrap gap-4 justify-evenly">
                   <div className=" flex flex-col items-center justify-center ">
                     <h4 className="text-red-500  font-semibold text-xl capitalize">
                       {scope} Projects

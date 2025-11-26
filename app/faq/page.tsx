@@ -22,37 +22,40 @@ const Page = () => {
             <FaqCard items={pricingQAndA} />
             <FaqCard items={questionsAndAnswers} />
           </div>
-          <div className="w-full md:w-82 min-w-60 flex flex-col ">
+          <div className="w-full md:w-82 min-w-60 flex flex-col  ">
          
  
             <div className="border md:min-w-76 md:w-78 border-gray-200 rounded-lg w-full text-[#262626] px-6 py-6 text-sm flex flex-col gap-3 ">
-              <p className="mb-2">Ask a Question</p>
+              <p className="mb-2 text-[#262626] dark:text-[#eaeaea]">Ask a Question</p>
               <div className="">
-                <label htmlFor="">Name</label>
+                <label htmlFor="" className="text-[#262626] dark:text-[#eaeaea] ">Name</label>
                 <input
                   type="text"
-                  className="bg-gray-50 rounded-md block w-full py-1 px-2 outline-none"
+                  placeholder="Name"
+                  className="bg-gray-50 rounded-sm block w-full py-1 px-2 outline-none h-8"
                 />
               </div>
               <div className="">
-                <label htmlFor="">Phone</label>
+                <label htmlFor="" className="text-[#262626] dark:text-[#eaeaea]">Phone</label>
                 <input
                   type="text"
-                  className="bg-gray-50 block w-full py-1 px-2 outline-none"
+                  placeholder="phone"
+                  className="bg-gray-50 block w-full py-1 px-2 outline-none rounded-sm h-8"
                 />
               </div>
               <div className="">
-                <label htmlFor="">Email</label>
+                <label htmlFor="" className="text-[#262626] dark:text-[#eaeaea]">Email</label>
                 <input
                   type="text"
-                  className="bg-gray-50 block w-full py-1 px-2 outline-none"
+                  placeholder="Email"
+                  className="bg-gray-50 block w-full py-1 px-2 outline-none rounded-sm h-8"
                 />
               </div>
               <div className="">
-                <label htmlFor="">Question</label>
-                <textarea className="bg-gray-50 block w-full py-1 px-2 outline-none" />
+                <label htmlFor="" className="text-[#262626] dark:text-[#eaeaea]">Question</label>
+                <textarea className="bg-gray-50 block w-full py-1 px-2 outline-none  rounded-sm h-8" />
               </div>
-              <button className="w-full h-12 capitalize font-medium rounded-lg flex items-center justify-center bg-red-600 py-1 px-3 text-white">
+              <button className="w-full h-9 text-xs capitalize font-semibold rounded-lg flex items-center justify-center bg-red-600 py-1 px-3 text-white">
                 submit question
               </button>
             </div>

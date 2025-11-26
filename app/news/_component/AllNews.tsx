@@ -46,20 +46,23 @@ const AllNews = async ({ filter }: { filter?: string }) => {
   const url = `https://2f7v75aq.api.sanity.io/v2025-11-04/data/query/production?query=+${encodeURIComponent(queryFilter)}`;
   const res = await fetch(url, { cache: "no-store", method: "GET" });
   if (!res.ok) {
-    if(res.status === 404) {
-      return <div className=""> Data not found</div>
+    if (res.status === 404) {
+      return <div className=""> Data not found</div>;
+    } else if (res.status >= 500) {
+      return <div className=""> Server error. Please try again letter</div>;
+    } else {
+      return <div className="">There was an error</div>;
     }
-    else if(res.status >= 500) {
-      return  <div className=""> Server error. Please try again letter</div>
-    }else{
-      return <div className="">There was an error</div>
-    } 
   }
   const rawData = await res.json();
   const data = (await rawData.result) as NewsItem[];
 
   if (!data || data.length == 0) {
-    return <div>No data found</div>;
+    return (
+      <div className="text-[#262626] dark:text-[#efefef] w-full text-center py-8 text-lg">
+        No data found
+      </div>
+    );
   }
 
   const PortableTextPreview = ({ value }: { value: PortableTextBlock[] }) => {

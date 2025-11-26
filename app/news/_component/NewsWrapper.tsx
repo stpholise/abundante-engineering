@@ -25,7 +25,7 @@ const NewsWrapper = ({ children }: { children: React.ReactNode }) => {
           elevator technology insights from the Abundant Engineering team.
         </p>
 
-        <div className="filter flex gap-3 justify-center items-center my-4">
+        <div className="filter flex flex-wrap gap-3 justify-center items-center my-4">
           {filter.map((item) => (
             <button
               key={item.value}
