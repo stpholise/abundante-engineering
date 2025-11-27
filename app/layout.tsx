@@ -4,6 +4,7 @@ import "./globals.css";
 import PrimaryHeader from "./_components/layout/PrimaryHeader";
 import Footer from "./_components/layout/Footer";
 import AosInitializer from "./_components/utils/AosInitializer";
+import ToastProvider from "./_components/utils/ToastProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#0a0a0a] min-h-screen min-w-full`}
       >
         <AosInitializer/>
+        <ToastProvider />
         <PrimaryHeader />
         {children}
         <Footer />

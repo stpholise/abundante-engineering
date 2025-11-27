@@ -1,8 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Image from "next/image";
 import { SetStateAction } from "react";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
+import { TrippleSpiner } from "@/app/_components/utils/Loading";
 
 interface RequestType {
   name: string;
@@ -25,6 +28,7 @@ const RequestForm = ({
   title: string;
   setOpenRequestForm: React.Dispatch<SetStateAction<boolean>>;
 }) => {
+  const [loading, setLoading] = useState<boolean>(false);
   const initialValues: RequestType = {
     name: "",
     phone: "",
@@ -47,6 +51,7 @@ const RequestForm = ({
   });
 
   const submitRequest = async (values: RequestType) => {
+    setLoading(true);
     try {
       await fetch("https://formsubmit.co/stephenolise4@gmail.com", {
         method: "POST",
@@ -66,18 +71,27 @@ const RequestForm = ({
           extra: values.extra,
         }),
       });
-
-      setOpenRequestForm(false)
+      toast.success("Submitted Successfully");
+      setOpenRequestForm(false);
+      setLoading(false);
     } catch (err) {
       if (err instanceof Error) {
         console.log(err.message);
       }
+      setLoading(false);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
       <div className="fixed text-[#262626] top-0 left-0 right-0 bottom-0 lg:top-3 lg:bottom-1/2 lg:left-1/2 lg:right-1/2 lg:-translate-x-1/2  w-full rounded-lg px-4 py-4 lg:px-6 lg:py-6 max-w-xl z-80  lg:w-[560px] lg:h-[96vh] bg-white shadow-xl">
+        {loading && (
+          <div className="absolute top-1/2 left-1/2 right-1/2 z-50">
+            <TrippleSpiner />
+          </div>
+        )}
         <p className="mb-3">{title}</p>
         <button
           onClick={() => setOpenRequestForm(false)}
