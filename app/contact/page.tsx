@@ -1,9 +1,50 @@
 "use client";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, FormikHelpers } from "formik";
 import MapEmbed from "../_components/utils/MapEmbed";
 import Image from "next/image";
 
+interface FormValuesType {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}
+
 const page = () => {
+  const initialValues: FormValuesType = {
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  };
+
+  const submitMessage = async (
+    values: FormValuesType,
+    { setSubmitting, resetForm }: FormikHelpers<FormValuesType>
+  ) => {
+    try {
+      await fetch("https://formsubmit.co/stephenolise4@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          name: values.name,
+          phone: values.phone,
+          email: values.email,
+          message: values.message,
+          _captcha: "false",
+        }),
+      });
+      resetForm();
+    } catch (err) {
+      if (err instanceof Error) {
+        console.log(err.message);
+      }
+    }
+
+    setSubmitting(false);
+  };
   return (
     <div className="bg-white dark:bg-[#121212] min-h-screen text-black dark:text-white   ">
       <main className="container mx-auto px-4 lg:px-16 py-10">
@@ -17,13 +58,8 @@ const page = () => {
         </div>
 
         <div className="lg:grid grid-cols-[8fr_4fr] gap-6 py-10">
-          <section className={""}>
-            <Formik
-              initialValues={{ name: "", phone: "", email: "", message: "" }}
-              onSubmit={(values, { setSubmitting }) => {
-                setSubmitting(false);
-              }}
-            >
+          <section className={"mb-4"}>
+            <Formik initialValues={initialValues} onSubmit={submitMessage}>
               {({ isSubmitting }) => (
                 <Form className="border border-gray-200 flex flex-col rounded-lg px-6 py-6 gap-4 max-w-xl mx-auto">
                   <div className="">
@@ -35,6 +71,7 @@ const page = () => {
                       Full Name *
                     </label>
                     <Field
+                      required
                       type="text"
                       name="name"
                       placeholder="Your Name"
@@ -50,8 +87,9 @@ const page = () => {
                       Phone *
                     </label>
                     <Field
-                      type="email"
-                      name="email"
+                      required
+                      type="phone"
+                      name="phone"
                       placeholder="Phone"
                       className="border border-gray-200 rounded-md w-full py-2 px-2 text-sm bg-gray-100 dark:bg-[#0a0a0a] outline-none "
                     />
@@ -65,6 +103,7 @@ const page = () => {
                       Email *
                     </label>
                     <Field
+                      required
                       type="email"
                       name="email"
                       placeholder="Your Email"

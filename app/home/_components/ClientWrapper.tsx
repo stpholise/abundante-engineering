@@ -13,6 +13,7 @@ const services: Service[] =[
           "icon": "/icons/building-red.svg",
           "title": "Installation",
           "text": "Professional installation services ensuring safety and efficiency."
+          
         },
          {
           "key": "maintenance",
@@ -37,6 +38,7 @@ const services: Service[] =[
           "icon": "/icons/hammer-red.svg",
           "title": "Spare Parts",
           "text": "Genuine spare parts for all elevator and escalator models."
+       
         },
         {
           "key": "consultation_project_mgmt",
@@ -50,10 +52,7 @@ const services: Service[] =[
 
 const ClientWrapper = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
-  // const { t } = useTranslation("common");
-  // const rawServices = t("sections.services.items", { returnObjects: true });
-  // const services: Service[] = Array.isArray(rawServices) ? rawServices : [];
-
+  
   const childrenArray = Array.isArray(children) ? children : [children];
 
   const FeaturedProjects = childrenArray[0];
