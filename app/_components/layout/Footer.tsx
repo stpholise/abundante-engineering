@@ -1,7 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
 
-const Footer = () => {
+import Image from "next/image";
+import Link from "next/link"; 
+
+const Footer = () => { 
   return (
     <footer className="bg-[#f5f5f5] dark:bg-[#171717] text-[#121212] dark:text-white py-12 ">
       <div className="container mx-auto px-4 lg:px-16">
@@ -84,9 +85,9 @@ const Footer = () => {
                     </Link>
                   ))}
                 </div>
-                <button className="text-xs bg-red-600 h-7 w-full text-white px-4 py-2 mt-2 rounded-lg font-medium cursor-pointer flex items-center justify-center gap-2">
+                <Link href='/quote'  className="text-xs bg-red-600 h-7 w-full text-white px-4 py-2 mt-2 rounded-lg font-medium cursor-pointer flex items-center justify-center gap-2">
                   Request a quote
-                </button>
+                </Link>
                 <button className="text-xs border border-[#e6e6e6] bg-white dark:bg-[#1c1c1c] dark:border-[#262626] dark:text-white h-7 w-full text-[#0a0a0a] px-4 py-2 mt-2 rounded-lg font-medium cursor-pointer flex items-center justify-center gap-2">
                   FAQ
                 </button>

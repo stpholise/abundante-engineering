@@ -1,7 +1,7 @@
 "use client";
 import { ReactNode } from "react";
 import ServiceCard from "../../_components/cards/ServiceCard"; 
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation" 
 
 import Image from "next/image";
 
@@ -83,7 +83,7 @@ const ClientWrapper = ({ children }: { children: ReactNode }) => {
           impact.
         </p>
         <div className="flex gap-4 my-4">
-          <button className="bg-red-600 text-white px-4 py-2 rounded-lg text-xs flex items-center gap-2 h-9">
+          <button onClick={() => router.push('/quote')} className="bg-red-600 text-white px-4 py-2 rounded-lg text-xs flex items-center gap-2 h-9">
             Request a Quote
             <Image
               src={"/arrow-right-white.svg"}
