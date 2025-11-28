@@ -78,7 +78,7 @@ const Page = () => {
 
   return (
     <div className="bg-white py-10">
-      <div className="">
+      <div className="px-4">
         <div className="mx-auto max-w-3xl mb-6">
           <h1 className="text-red-500 text-3xl font-bold text-center">
             Our Projects{" "}
